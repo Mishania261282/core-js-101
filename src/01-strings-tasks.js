@@ -92,8 +92,8 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(value) {
-  return value;
+function removeLeadingAndTrailingWhitespaces(value) {  
+  return value.trim();
 }
 
 /**
@@ -108,7 +108,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  return value * count;
+  return value.repeat(count);
 }
 
 /**
