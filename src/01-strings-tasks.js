@@ -64,8 +64,9 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value;
+  return value.slice(6, -1);
 }
+console.log(extractNameFromTemplate('Hello, John Doe!'));
 
 /**
  * Returns a first char of the given string.
