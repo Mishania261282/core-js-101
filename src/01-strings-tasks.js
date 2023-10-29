@@ -19,6 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
+  console.log(value1 + value2)
   return value1 + value2;
 }
 
@@ -35,7 +36,8 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  return value;
+  console.log(value.length)
+  return value.length;
 }
 
 /**
@@ -52,7 +54,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return firstName + lastName;
+  return "Hello, "+firstName+" " + lastName+"!";
 }
 
 /**
