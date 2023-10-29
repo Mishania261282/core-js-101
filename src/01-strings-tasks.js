@@ -92,7 +92,7 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(value) {  
+function removeLeadingAndTrailingWhitespaces(value) {
   return value.trim();
 }
 
