@@ -18,8 +18,7 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(value1, value2) {
-  console.log(value1 + value2)
+function concatenateStrings(value1, value2) {  
   return value1 + value2;
 }
 
@@ -35,8 +34,7 @@ function concatenateStrings(value1, value2) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(value) {
-  console.log(value.length)
+function getStringLength(value) {  
   return value.length;
 }
 
