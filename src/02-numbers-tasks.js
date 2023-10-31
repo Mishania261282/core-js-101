@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -22,7 +21,6 @@
 function getRectangleArea(width, height) {
   return width * height;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -52,9 +50,10 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+  let result = 0;
+  result = (value1 + value2) / 2;
+  return result;
 }
-
 /**
  * Returns a distance between two points by cartesian coordinates.
  *
@@ -71,7 +70,9 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.sqrt((Math.abs(x1) + Math.abs(x2)) ** 2 + (Math.abs(y1) + Math.abs(y2)) ** 2);
+  return Math.sqrt(
+    (Math.abs(x1) + Math.abs(x2)) ** 2 + (Math.abs(y1) + Math.abs(y2)) ** 2,
+  );
 }
 
 /**
@@ -89,7 +90,6 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 function getLinearEquationRoot(a, b) {
   return -b / a;
 }
-
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -129,7 +129,6 @@ function getLastDigit(value) {
   return value % 10;
 }
 
-
 /**
  * Returns a number by given string representation.
  *
@@ -161,7 +160,6 @@ function parseNumberFromString(value) {
 function getParallelepipedDiagonal(a, b, c) {
   return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
-
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -221,7 +219,9 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  return typeof (Number(value)) === 'number' ? Number(value) : def;
+  // if (isNaN(value) === true) { return def; }
+  // return Number(value);
+  return value * def;
 }
 
 module.exports = {
