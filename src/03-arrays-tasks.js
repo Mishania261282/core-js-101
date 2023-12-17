@@ -19,9 +19,11 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
+
 function findElement(arr, value) {
   return arr.lastIndexOf(value);
 }
+
 /**
  * Generates an array of odd numbers of the specified length
  *
@@ -33,9 +35,10 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
+
 function generateOdds(len) {
   const arr = [];
-  for (let i = 1; i <= len; i + 1) {
+  for (let i = 1; i <= len; i += 1) {
     arr.push(2 * i - 1);
   }
   return arr;
@@ -232,7 +235,7 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   const result = [];
-  for (let i = 0; i < arr.length; i + 1) {
+  for (let i = 0; i < arr.length; i += 1) {
     result.push(arr.slice(0, i + 1).reduceRight((sum, item) => sum + item));
   }
   return result;
@@ -268,7 +271,13 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  return arr;
+  const result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j <= i; j += 1) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 /**
@@ -285,7 +294,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  return arr;
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 /**
@@ -302,7 +311,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  return arr;
+  return arr.filter((item) => typeof item === 'number' && item > 0).length;
 }
 
 /**
@@ -335,7 +344,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-  return arr;
+  return arr.reduce((sum, item) => sum + item);
 }
 
 /**
@@ -369,7 +378,7 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurrences(arr, item) {
-  return arr * item;
+  return arr.filter((el) => el === item).length;
 }
 
 /**
@@ -384,7 +393,7 @@ function findAllOccurrences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  return arr;
+  return arr.join(',');
 }
 
 /**
@@ -414,7 +423,18 @@ function toStringList(arr) {
  *    ]
  */
 function sortCitiesArray(arr) {
-  return arr;
+  return arr.sort((x, y) => {
+    if (x.country < y.country) {
+      return -1;
+    }
+    if (x.country > y.country) {
+      return 1;
+    }
+    if (x.country === y.country) {
+      return x.city.localeCompare(y.city);
+    }
+    return x;
+  });
 }
 
 /**
@@ -453,7 +473,12 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  return start * end;
+  const arr = [];
+  let count = start - 1;
+  for (let i = start - 1; i < end; i += 1) {
+    arr.push((count += 1));
+  }
+  return arr;
 }
 
 /**
@@ -468,6 +493,8 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
+  arr.filter((i) => arr.indexOf(i) !== arr.lastIndexOf(i) && arr.splice(arr.lastIndexOf(i), 1));
+  arr.filter((i) => arr.indexOf(i) !== arr.lastIndexOf(i) && arr.splice(arr.lastIndexOf(i), 1));
   return arr;
 }
 
